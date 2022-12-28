@@ -1,0 +1,123 @@
+{
+  "Servic Class": {
+    "prefix": ["sc", "service class"],
+    "body": [
+      "import BaseService from '../policies/BaseService';",
+      "import { $2 } from '../models/dbtypes';",
+      "import { db } from '../models/db';",
+      "",
+      "export class $1Service extends BaseService {",
+      "\tconstructor() {",
+      "\t\tsuper();",
+      "\t}",
+      "\t$3",
+      "}"
+    ],
+    "description": "Create a Service Class"
+  },
+  "Service Method": {
+    "prefix": ["sm", "service method"],
+    "body": [
+      "${1:myMethod} = async ($2) => {",
+      "\ttry {",
+      "\t\t$3",
+      "\t} catch (error) {",
+      "\t\tthis.log.error(error);",
+      "\t\tthrow error;",
+      "\t}",
+      "};"
+    ],
+    "description": "Create a service method"
+  },
+  "Controller Class": {
+    "prefix": ["cc", "controller class"],
+    "body": [
+      "import BaseController from '../policies/BaseController';",
+      "import { Request, Response, Next } from 'restify';",
+      "$2",
+      "export class $1Controller extends BaseController {",
+      "\tconstructor($3) {",
+      "\t\tsuper();",
+      " \t}",
+      "\t$4",
+      "}"
+    ],
+    "description": "Create a Controller Class"
+  },
+  "Controller Method": {
+    "prefix": ["cm", "controller method"],
+    "body": [
+      "${1:myMethod} = async (req: Request, res: Response, next: Next) => {",
+      "\ttry {",
+      "\t\t$2",
+      "\t} catch (error) {",
+      "\t\tthis.ErrorResult(error, req, res, next);",
+      "\t}",
+      "};"
+    ],
+    "description": "Create a controller method"
+  },
+  "New Interface": {
+    "prefix": ["ni", "new interface"],
+    "body": [
+      "export interface ${1:IMYInterface} extends Document {",
+      "\t$2",
+      "}"
+    ],
+    "description": "create a interface"
+  },
+  "New Schema": {
+    "prefix": ["ns", "new schema"],
+    "body": [
+      "const ${1:mySchema} = new Schema(",
+      "\t{",
+      "\t\t$2",
+      "\t},",
+      "\t{ $3 }",
+      ")"
+    ],
+    "description": "create a new schema"
+  },
+  "New Schema Timestamps": {
+    "prefix": ["nst", "new schema timestamps"],
+    "body": [
+      "const ${1:mySchema} = new Schema(",
+      "\t{",
+      "\t\t$2",
+      "\t},",
+      "\t{ timestamps: {} }",
+      ")"
+    ],
+    "description": "create a new schema with timestamps"
+  },
+  "New DB": {
+    "prefix": ["ndb", "new db"],
+    "body": [
+      "${1:myDB}: connection.model<dbtypes.${2:myInterface}>('{3:my-collections}', SCHEMAS.{4:mySchema}),"
+    ],
+    "description": "create a new db"
+  },
+  "Service Create User": {
+    "prefix": ["scu", "service create user"],
+    "body": [
+      "createA${1:User} = async (${2:user}: ${3:IUser}) => {",
+      "\ttry {",
+      "\t\tlet enc = { ...${2:user} };",
+      "\t\tenc.password = hashSync(enc.password, genSaltSync(12));",
+      "\t\t",
+      "\t\tlet result: any = await db.${4:users}.create(enc);",
+      "\t\tresult = result.toObject();",
+      "\t\tdelete result.password;",
+      "\t\tdelete result.createdAt;",
+      "\t\tdelete result.updatedAt;",
+      "\t\t",
+      "\t\treturn this.RESP(true, 'created successfully', result);",
+      "\t} catch (error) {",
+      "\t\tthis.log.error(error);",
+      "\t\tthrow error;",
+      "\t}",
+      "};"
+    ],
+    "description": "service user create method"
+  }
+}

@@ -1,0 +1,41 @@
+{
+	"name": "common-media-queries",
+	"displayName": "Common Media Queries",
+	"description": "A way easy to write common media queries",
+	"version": "0.1.1",
+	"icon": "images/logo.png",
+	"publisher": "diogomachado",
+	"engines": {
+		"vscode": "^1.57.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "css",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "scss",
+				"path": "./snippets/snippets.code-snippets"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/diogomachado/common-media-queries"
+	},
+	"__metadata": {
+		"id": "6c0226b0-1731-48a8-aa15-c1c22414f60d",
+		"publisherId": "3accfec6-cb70-4135-964e-a0bd2539c406",
+		"publisherDisplayName": "Diogo Machado",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1663246359156
+	}
+}

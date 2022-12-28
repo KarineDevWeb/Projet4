@@ -1,0 +1,118 @@
+{
+	"name": "vscode-cdnjs",
+	"displayName": "cdnjs",
+	"description": "Search and embed libraries from cdnjs.com in Visual Studio Code",
+	"version": "0.19.0",
+	"publisher": "JakeWilson",
+	"author": "Jake Wilson",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"cdn",
+		"cdnjs",
+		"content delivery network"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Jakobud/vscode-cdnjs.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Jakobud/vscode-cdnjs/issues"
+	},
+	"homepage": "https://github.com/Jakobud/vscode-cdnjs",
+	"activationEvents": [
+		"onCommand:cdnjs.search",
+		"onCommand:cdnjs.recentLibraries",
+		"onCommand:cdnjs.clearCache"
+	],
+	"icon": "images/icon.png",
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "cdnjs.search",
+				"title": "Search for libraries",
+				"category": "cdnjs"
+			},
+			{
+				"command": "cdnjs.recentLibraries",
+				"title": "Recent libraries",
+				"category": "cdnjs"
+			},
+			{
+				"command": "cdnjs.clearCache",
+				"title": "Clear cache",
+				"category": "cdnjs"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "cdnjs",
+			"properties": {
+				"cdnjs.quoteStyle": {
+					"type": "string",
+					"default": "single",
+					"enum": [
+						"single",
+						"double"
+					],
+					"description": "Quote style for HTML tags. Possible values are 'single' or 'double'"
+				},
+				"cdnjs.protocol": {
+					"type": "string",
+					"default": "https://",
+					"enum": [
+						"https://",
+						"http://",
+						"//"
+					],
+					"description": "Protocol for urls in HTML tags. Possible values are 'https://', 'http://' or '//'"
+				},
+				"cdnjs.maxRecentLibraries": {
+					"type": "integer",
+					"default": 10,
+					"description": "The maxmium number of Recent Libraries to save"
+				},
+				"cdnjs.cacheTime": {
+					"type": "integer",
+					"default": 21600,
+					"description": "The length of time (in seconds) to cache library and search results"
+				},
+				"cdnjs.integrity": {
+					"type": "boolean",
+					"default": true,
+					"description": "Include integrity attribute (SRI) in script and link tags"
+				},
+				"cdnjs.crossorigin": {
+					"type": "boolean",
+					"default": true,
+					"description": "Include crossorigin attribute in script and link tags"
+				}
+			}
+		}
+	},
+	"devDependencies": {
+		"vscode": "^1.1.33"
+	},
+	"dependencies": {
+		"got": "^9.6.0",
+		"open": "^6.2.0",
+		"vscode-cache": "^0.3.0"
+	},
+	"__metadata": {
+		"id": "7f60a80e-1ca5-46ab-83a9-31013576f584",
+		"publisherId": "c2da1904-0712-47f1-b33e-df0e0fdab5f0",
+		"publisherDisplayName": "Jake Wilson",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1661780327973
+	}
+}

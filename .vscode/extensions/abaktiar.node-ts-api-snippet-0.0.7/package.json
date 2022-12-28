@@ -1,0 +1,41 @@
+{
+	"name": "node-ts-api-snippet",
+	"displayName": "Node Api Snippets",
+	"description": "Node ts api starter snippets. Few snippets to increase your productivity",
+	"version": "0.0.7",
+	"publisher": "abaktiar",
+	"icon": "assets/images/node-icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/abaktiar/node-api-snippets.git"
+	},
+	"engines": {
+		"vscode": "^1.28.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "typescript",
+				"path": "./src/snippets/snippets.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./src/snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "8486f9e0-0103-4639-a59b-cb92176eb100",
+		"publisherId": "47e8983b-62c3-441a-ab48-c49de6be085f",
+		"publisherDisplayName": "abaktiar",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1661783805304
+	}
+}

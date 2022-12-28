@@ -1,0 +1,11 @@
+[core]
+	editor = vim
+[user]
+	name = KarineDevWeb
+	email = karineisabellesavoir@gmail.com
+[color]
+	diff = auto
+	branch = auto
+	status = auto
+[merge]
+	tool = vimdiff

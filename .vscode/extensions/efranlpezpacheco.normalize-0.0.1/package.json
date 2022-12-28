@@ -1,0 +1,32 @@
+{
+	"publisher": "EfranLpezPacheco",
+	"name": "normalize",
+	"displayName": "normalize",
+	"description": "Set a defaults values to CSS",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.59.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "css",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "e3e70d12-7ab8-4d70-9759-79d7cfef99a4",
+		"publisherId": "11ab7d45-9030-46ef-9fb8-6ea2426cb8e6",
+		"publisherDisplayName": "Efraín López Pacheco",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1662123452158
+	}
+}
